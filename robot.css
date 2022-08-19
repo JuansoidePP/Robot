@@ -1,0 +1,492 @@
+:root {
+    /*cuerpo robot*/
+    --azulOscuro:#22223b;
+    --grisOscuro:#4a4e69;
+    --grisTranqui:#9a8c98;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(25deg,#131925,#0e4763,#0985af,#07cdff,#0985af,#0e4763,#131925);
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
+
+.contenedor{
+    
+    position: relative;
+    width: 300px;
+    height: 420px;
+    border-radius: 100px 100px 150px 150px;
+}
+
+
+/*Fuego start*/
+
+.fuego{
+    position: relative;
+    background:linear-gradient(50deg,rgb(116, 114, 241),rgb(78, 76, 228),rgb(63, 44, 233),rgb(5, 8, 177));
+    width: 110px;
+    height: 100px;
+    left: 260px;
+    bottom: 150px;
+    border-radius: 50% 50% 50% 0%;
+    transform: rotate(-45deg);
+    animation: fuego 3s infinite;
+  
+}
+
+.fuego::before{
+    background: white;
+    width: 40px;
+    height: 20px;
+    top: 0;
+}
+
+.fuego2{
+    position: absolute;
+    background:linear-gradient(50deg,rgb(116, 114, 241),rgb(78, 76, 228),rgb(63, 44, 233),rgb(5, 8, 177));
+    width: 110px;
+    height: 100px;
+    left: 130px;
+    bottom: -60px;
+    border-radius: 50% 50% 50% 0%;
+    transform: rotate(-45deg);
+    animation: fuego 3s infinite;
+}
+
+
+@keyframes fuego{
+    0%{
+        width: 110px;
+        height: 100px;
+    }
+    20%{
+       
+        width: 111px;
+        height: 110px;
+    }
+    40%{
+        width: 110px;
+        height: 100px;   
+    }
+    60%{
+        width: 111px;
+        height: 110px;
+    }
+    80%{
+        width: 110px;
+        height: 100px;
+    }
+    90%{
+        width: 111px;
+        height: 110px;
+    }
+}
+
+
+/*Fuego end*/
+
+
+
+
+/*jekpack star*/
+
+.jekpack{
+    position: absolute;
+    background-color: #494953;
+    height: 230px;
+    width: 160px;
+    left: 215px;
+    top: 120px;
+    border-radius: 0% 50% 20%  0 ;
+}
+
+.jekpack-invisible{
+    position: absolute;
+    height: 280px;
+    width: 160px;
+    left: 210px;
+    top: 80px;
+    border-radius: 0% 50% 20%  0 ;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: flex-end;
+    z-index: 0;
+    
+}
+
+.jekpack-invisible div{
+    background: linear-gradient(10deg,rgb(139, 137, 137),rgb(185, 179, 179));
+    height: 70px;
+    width: 45px;
+    border-radius: 40px 40px 0px 0px;
+
+}
+
+
+/*jekpack end*/
+
+
+
+
+/*cabeza star*/
+.cabeza{
+    background: var(--grisOscuro);
+    height: 185px;
+    border-radius: 100px 100px 0 0;
+    position: relative;
+    z-index: 2;
+  
+}
+
+
+
+
+.pelo{
+    width: 70px;
+    height: 80px;
+    position: absolute;
+    top: -30px;
+    left: 65px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 8px;
+
+}
+
+.pelo div{
+    background-color: var(--grisTranqui);
+    border-radius: 10px;
+}
+
+.ojo{
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    width: 75%;
+    height: 55px;
+    left: 0;
+    bottom: 25px;
+    border-radius: 0 0px 60px 0;
+    overflow: hidden;
+}
+
+.ojo::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 400%;
+    top: -60px;
+    left: -20px;
+   
+    background: rgb(250, 1, 1);
+    
+    animation: reflejo 8s infinite;
+    
+    
+}
+.ojo::after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 400%;
+    top: -60px;
+    left: 80px;
+    transform: rotate(40deg);
+    background: rgb(255, 255, 255);
+    opacity: 0.2;
+    
+}
+
+
+@keyframes reflejo{
+    0%{transform: translateX(0px);}
+    6%{transform: translateX(248px);}
+    100%{transform: translateX(380px);}
+    
+
+}
+
+
+
+
+
+.oido{
+    position: absolute;
+    right: -10px;
+    bottom: 45px;
+    width: 60px;
+    height: 60px;
+    background: var(--azulOscuro);
+    border-radius: 50%;
+}
+
+.cir{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: var(--grisOscuro);
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    
+}
+
+.antena{
+    position: absolute;
+    width: 7px;
+    height: 130px;
+    background-color: rgb(44, 15, 15);
+    bottom: 25px;
+    right: 25px;
+    border-radius: 0  0 5px 5px;
+}
+
+.antena div{
+    position: absolute;
+    width: 17.5px;
+    height: 17.5px;
+    bottom: 125px;
+    left: -4.65px;
+    border-radius: 50%;
+    animation: luz 0.7s infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes luz{
+    0%{
+        background-color: rgb(136, 56, 56);
+    }
+    
+    100%{
+        background-color: red;
+        
+    }
+}
+/*cabeza end*/
+
+
+
+/*cuerpo start*/
+.cuerpo{
+ background-color: var(--azulOscuro);
+ height: 235px;
+ border-radius: 0 0 150px 150px;
+ position: relative;
+ z-index: 2;
+ 
+}
+
+
+
+.brazo-izq{
+    display: flex;
+    position: relative;
+    background-color:var(--grisTranqui);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -20px;
+    left: 250px;
+   
+}
+.brazo-izq1{
+    display: flex;
+    position: absolute;
+    background-color: var(--grisOscuro);
+    width: 50px;
+    height: 140px;
+    border-radius: 20px;
+    top: 30px;
+    right: -40px;
+}
+
+.tuerca1{
+    position: absolute;
+    background-color: #13132b;
+    width: 50px;
+    height: 50px;
+    right: -20px;
+    bottom: 50px;
+    border-radius: 50%;
+}
+
+.bala1{
+    position: absolute;
+    background-color: rgb(126, 79, 255);
+    width: 50px;
+    height: 15px;
+    right: 125px;
+    bottom: 52px;
+    border-radius: 60% 100% 100% 60%;
+    
+    animation: bala1 10s infinite;
+}
+
+@keyframes bala1{
+    5%{
+        transform: translateX(0px);
+    }
+    6%{transform: translateX(-650px);}
+
+    6.05%{
+        transform: translateX(0);
+    }
+}
+
+.pistola1{
+    position: absolute;
+    background-color: rgb(71, 71, 71);
+    width: 100px;
+    height: 20px;
+    right: 100px;
+    bottom: 50px;
+    animation: pistola1 10s infinite;
+}
+
+@keyframes pistola1{
+   
+    5%{
+        transform: translateX(0px);
+    }
+    6%{transform: translateX(10px);}
+
+    6.5%{
+        transform: translateX(0);
+    }
+   
+    
+}
+
+
+
+.pistola1-acc{
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    height: 20px;
+    right: 70px;
+    bottom: 40px;
+    border-radius: 7px 0px 0px 40px;
+}
+
+.antebrazo{
+    position: absolute;
+    background-color: var(--grisOscuro);
+    width: 140px;
+    height: 50px;
+    right: -8px;
+    bottom: 30px;
+    border-radius: 5px 5px 40px 5px;
+}
+
+
+/*cuerpo end*/
+
+/*Brazo dderecho start*/
+
+.hombro{
+    display: flex;
+    position: relative;
+    background-color:var(--grisTranqui);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    bottom: 255px;
+    left:-30px;
+}
+
+
+.brazo-der{
+    display: flex;
+    position: absolute;
+    background-color: var(--grisOscuro);
+    width: 50px;
+    height: 140px;
+    border-radius: 20px;
+    bottom: 60px;
+    left:-20px;
+}
+
+.tuerca2{
+    position: absolute;
+    background-color: #13132b;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 45px;
+    left:-38px;
+}
+
+.bala2{
+    position: absolute;
+    background-color: rgb(126, 79, 255);
+    width: 50px;
+    height: 15px;
+    left: -200px;
+    bottom: 52px;
+    border-radius: 60% 100% 100% 60%;
+    
+    animation: bala2 10s infinite;
+}
+
+@keyframes bala2{
+    0%{
+        transform: translateX(0);
+    }
+    1%{
+        transform: translateX(-550px);
+    }
+    1.1%{
+        transform: translateX(0);
+    }
+   
+    
+}
+
+.pistola2{
+    position: absolute;
+    background-color: rgb(71, 71, 71);
+    width: 100px;
+    height: 20px;
+    left: -210px;
+    bottom: 50px;
+    animation: pistola2 10s infinite;
+   
+}
+
+@keyframes pistola2{
+    0%{
+        transform: translateX(0);
+    }
+    1%{
+        transform: translateX(10px);
+    }
+    2%{
+        transform: translateX(0);
+    }
+    
+}
+
+.pistola2-acc{
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    height: 20px;
+    left: -180px;
+    bottom: 40px;
+    border-radius: 7px 0px 0px 40px;
+}
+
+.antebrazo2{
+    position: absolute;
+    background-color: var(--grisOscuro);
+    width: 140px;
+    height: 50px;
+    left: -140px;
+    bottom: 30px;
+    border-radius: 5px 5px 40px 5px;
+}
+
+/*Brazo derecho end*/
